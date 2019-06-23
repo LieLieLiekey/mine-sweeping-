@@ -1,1 +1,3 @@
-aaaaa
+只需运行ChoiceInterface.java即可。
+
+**注意该Sweeping文件的代码和图片是从eclipse的项目中提取出来的，而整个项目文件在与sweeping同文件的project中**
