@@ -1,0 +1,83 @@
+1.在选择界面进入游戏界面时，会有一段延迟，使人物产生游戏退出的幻觉.能否修改一下，等游戏创建成功后该窗口再隐藏
+
+
+2.按钮Enable后，按钮颜色变灰色//ok
+	setDisableICon函数即可
+	
+	
+3.怎么游戏结束弹出一个自定义图片且可以确认的对话框
+	为解决
+
+4.右键的出来的flag不好看//ok
+	给按钮设置透明处理和background=color.white即可
+
+
+5.在自定义的弹出窗口中，为了只能出现一次窗口，对其他事件进行监听，有挣脱的时候把原窗口销毁并关闭
+	在其他按钮上他添加事件监听器//ok
+	在主窗口添加mouseListener监听器不起作用
+
+class BomButtonMouseLisence extends MouseAdapter{
+	public void mouseClicked(MouseEvent e) {
+			System.out.println("mouseClicked!!!!");
+			JButton button = (JButton)e.getSource();
+			if(button.isEnabled()==false)
+				return ;
+			
+			for(int i=0;i<GameProperties.row;i++) 
+			{
+				for(int j=0;j<GameProperties.col;j++) 
+				{
+					if(button.equals(Game.buttons[i][j])) 
+					{
+						if(e.getButton()==MouseEvent.BUTTON1) 
+						{//鼠标左键单击
+							if(Game.counts[i][j] == GameProperties.BOMCODE) 
+								Game.loseGame();
+							else 
+							{
+								Game.openCell(i,j);	
+								Game.checkWin();
+							}
+						}
+						else if(e.getButton()==MouseEvent.BUTTON3) 
+						{//鼠标右键单击
+							if(Game.have_falg[i][j]==true)
+							{
+								Game.seInitButton(Game.buttons[i][j]);
+								Game.have_flag[i][j]=false;
+							}
+							else
+							{
+								
+							}
+						}
+						return ;
+					}
+					
+				}
+			}
+			/*没有被打开*/
+			if(e.getButton()==MouseEvent.BUTTON1) {//鼠标左键单击
+				int count = 0;
+				for(int i=0;i<GameProperties.row;i++) {
+					for(int j=0;j<GameProperties.col;j++) {
+						if(button.equals(Game.buttons[i][j])) {
+							count = Game.counts[i][j];
+							if(count == GameProperties.BOMCODE) {
+								Game.loseGame();
+							} 
+							else {
+								Game.openCell(i,j);	
+								Game.checkWin();
+							}
+							return;
+							
+						}	
+					}
+				}
+			}
+			if (e.getButton() == MouseEvent.BUTTON3) {//判断鼠标右击动作
+				
+			}
+	}
+}
