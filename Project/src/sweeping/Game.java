@@ -185,12 +185,6 @@ public class Game {
 		//设置透明度
 		
 	}
-	/*
-	 进入
-	 */
-//	public static JPanel getTopPanel() {
-//		
-//	}
 	static public void ceshi() {
 		ChoiceInterface.create();
 		create();
@@ -205,12 +199,12 @@ public class Game {
 	}
 	static public JButton setButtonImage(JButton button,int d,String s1,String s2,String s3) {
 		//指定button一个默认图片，Press图片，onMouse图片，
-		button.setBorderPainted(false);
+//		button.setBorderPainted(false);
 		
 		button.setIcon(getSpcImageIcon(s1,d));
 		button.setPressedIcon(getSpcImageIcon(s2,d));
 		button.setRolloverIcon(getSpcImageIcon(s3,d));
-		button.setOpaque(true);
+//		button.setOpaque(false);
 		return button;
 	}
 	static public void addBom() {
@@ -247,6 +241,8 @@ public class Game {
 	public static void setButtonPro(JButton button,int d) {
 		/*设置图片，以及按钮的监听器*/
 		setButtonImage(button, d, "images/icon_0.png", "images/icon_1.png", "images/icon_2.png");
+		button.setBorderPainted(false);
+		button.setOpaque(false);
 		button.addMouseListener((new Game()).bomButtonMouseLisence);
 	}
 //	public static JPanel getCenterPanel() {
