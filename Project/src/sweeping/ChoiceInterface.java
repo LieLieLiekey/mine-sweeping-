@@ -59,6 +59,39 @@ class ChoiceFrameMouseLisence implements MouseListener{
 	}
 	
 }
+class AAA implements MouseListener{
+
+	@Override
+	public void mouseClicked(MouseEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void mousePressed(MouseEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void mouseReleased(MouseEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void mouseEntered(MouseEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void mouseExited(MouseEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+	
+}
 public class ChoiceInterface {
 	public static JFrame jf;
 	static public void main(String[] args) {
@@ -167,7 +200,7 @@ public class ChoiceInterface {
 		jf.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		jf.setResizable(false);
 		jf.setLocation(343, 36);
-//		jf.addMouseListener(new ChoiceFrameMouseLisence());
+		jf.addMouseListener(new ChoiceFrameMouseLisence());
 		//设置没有装饰
 		jf.setUndecorated(true);
 //		jf.setBackground(new Color(0,255,0));
