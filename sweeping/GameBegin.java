@@ -176,7 +176,7 @@ public class GameBegin extends JFrame{
 			for(int j=0;j<GameProperties.col&&flag;j++) {
 				if(grid_buttons[i][j].isEnabled() == true)
 				{
-					if(grid_buttons[i][j].have_flag&grid_buttons[i][j].isbom) continue;
+					if(grid_buttons[i][j].have_flag&&grid_buttons[i][j].isbom) continue;
 					else flag=false;
 				}		
 			}
